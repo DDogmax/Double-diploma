@@ -12,4 +12,4 @@ https://serverspace.ru/support/help/install-and-configure-ms-sql-server-express/
 -Chose shopDB database
 -Backup it
 4.Then you can start the actual programme and start to use it for your pleasure
-5.If you want to start it with out Visual studio u ne to go to \Magaz\bin\debug\Magaz.exe
+5.5.If you want to start it with out Visual studio u ne to go to \Magaz\bin\debug\Magaz.exe
