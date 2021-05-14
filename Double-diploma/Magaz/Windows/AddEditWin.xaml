@@ -1,0 +1,148 @@
+﻿<Window x:Class="Magaz.AddEditWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Magaz"
+        mc:Ignorable="d"
+        Title="Ркдактирование товара" Height="600" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid Background="#95b5a1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Добавление / Изменение данных о товаре"
+                   Grid.ColumnSpan="2"
+                   FontSize="24"
+                   HorizontalAlignment="Center"
+                   FontFamily="arial"/>
+
+        <Border Grid.Row="1"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                BorderThickness="1"
+                BorderBrush="Gray"
+                Width="200">
+            <Image x:Name="imageProduct"/>
+        </Border>
+        <Button x:Name="btnAddImage" 
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Width="180"
+                Margin="0 7"
+                Content="Выбрать изображение"
+                FontSize="16"
+                Click="btnAddImage_Click"
+                Background="#E0E0E0"
+                FontFamily="arial"/>
+
+        <TextBlock Text="Название товара"
+                   Grid.Row="4"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        <TextBlock Text="Цена товара"
+                   Grid.Row="5"
+                   Style="{StaticResource textBlockStyle1}" />
+
+
+        <TextBlock Text="Описание товара"
+                   Grid.Row="6"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        <TextBlock Text="Категория товара"
+                   Grid.Row="7"
+                   Style="{StaticResource textBlockStyle1}" />
+        
+        <TextBlock Text="Количество товара"
+                   Grid.Row="8"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        <TextBlock Text="Ед. измерения"
+                   Grid.Row="9"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        <TextBox x:Name="txtProductName" Grid.Row="4"
+                 Grid.Column="1"
+                 Margin="7"
+                 FontSize="15"
+                 VerticalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <TextBox x:Name="txtProductPrice" Grid.Row="5"
+                 Grid.Column="1"
+                 Margin="7"
+                 FontSize="15"
+                 VerticalContentAlignment="Center" PreviewTextInput="txtProductPrice_PreviewTextInput"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <TextBox x:Name="txtProductDescription" Grid.Row="6"
+                 Grid.Column="1"
+                 Margin="7"
+                 FontSize="15"
+                 VerticalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <ComboBox x:Name="cmbProductCategory" Grid.Row="7"
+                 Grid.Column="1"
+                 Margin="7"
+                 FontSize="15"
+                 HorizontalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <TextBox x:Name="txtProductCount" Grid.Row="8"
+                 Grid.Column="1"
+                 Margin="7"
+                 FontSize="15"
+                 VerticalContentAlignment="Center"
+                 PreviewTextInput="txtProductCount_PreviewTextInput"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <ComboBox x:Name="cmbUnitOfMeasure" Grid.Row="9"
+                 Grid.Column="1"
+                 Margin="7"
+                 FontSize="15"
+                 HorizontalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <Button x:Name="btnSave" Grid.Row="10"
+                 Grid.Column="0"
+                Content="Cохранить"
+                FontSize="16"
+                Grid.ColumnSpan="2"
+                Width="200"
+                Margin="0 7"
+                Click="btnSave_Click"
+                Background="#E0E0E0"
+                FontFamily="arial"/>
+
+        <Button x:Name="btnClose" Grid.Row="11"
+                 Grid.Column="0"
+                Content="Отмена"
+                FontSize="16"
+                Grid.ColumnSpan="2"
+                Width="200"
+                Margin="0 7" Click="btnClose_Click"
+                Background="#E0E0E0"
+                FontFamily="arial"/>
+    </Grid>
+</Window>

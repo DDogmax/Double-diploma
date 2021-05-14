@@ -1,0 +1,242 @@
+﻿<Window x:Class="Magaz.ActionWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Magaz"
+        mc:Ignorable="d"
+        Title="Список товаров" Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#95b5a1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Grid.Column="0" 
+                   Text="SmartCrow" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center"
+                   FontSize="25"
+                   FontFamily="Arial"/>
+
+
+        <WrapPanel Grid.Row="0"
+                   Grid.Column="1"
+                   VerticalAlignment="Center">
+            <TextBlock Text="Поиск товаров"
+                       FontSize="20"/>
+            <TextBox x:Name="txtSearch" 
+                     Width="150" 
+                     Margin="20 0 0 0" 
+                     FontSize="15"
+                     VerticalContentAlignment="Center"
+                     FontFamily="Arial"
+                     TextChanged="txtSearch_TextChanged"
+                     Background="#E0E0E0"
+                     />
+
+            <TextBlock Margin="100 0 0 0"
+                       VerticalAlignment="Center"
+                       FontSize="15"
+                       FontFamily="arial">
+                <Run Text="Пользователь:"/>
+                <Run x:Name="txtNameEmpl"/>
+            </TextBlock>
+        </WrapPanel>
+        
+        
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              Grid.RowSpan="3">
+            <StackPanel >
+                <Button x:Name="btnMainPage"
+                        Height="30" 
+                        Width="120"
+                        Content="Все товары"
+                        Margin="5 5 5 10"
+                        Click="btnMainPage_Click"
+                        Background="#E0E0E0"
+                        FontFamily="arial"/>
+                <Button x:Name="btnAppliances"
+                        Height="30"
+                        Width="120"
+                        Content="Бытовая техника"
+                        Margin="5 9"
+                        Click="btnAppliances_Click"
+                        FontFamily="arial"/>
+                <Button x:Name="btnSmartphone"
+                        Height="30"
+                        Width="120" 
+                        Content="Смартфоны" 
+                        Margin="5 9"
+                        Click="btnSmartphone_Click"
+                        Background="#E0E0E0"
+                        FontFamily="arial"/>
+                <Button x:Name="btnTV"
+                        Height="30"
+                        Width="120"
+                        Content="ТВ и развлечения"
+                        Margin="5 9"
+                        Click="btnTV_Click"
+                        Background="#E0E0E0"
+                        FontFamily="arial"/>
+                <Button x:Name="btnPC" 
+                        Height="30"
+                        Width="120"
+                        Content="Компьютеры" 
+                        Margin="5 9"
+                        Click="btnPC_Click"
+                        Background="#E0E0E0"
+                        FontFamily="arial"/>
+                <Button x:Name="btnOffice"
+                        Height="30"
+                        Width="120"
+                        Content="Офисная техника"
+                        Margin="5 9"
+                        Click="btnOffice_Click"
+                        Background="#E0E0E0"
+                        FontFamily="arial"/>
+                <Button x:Name="btnAccessories"
+                        Height="30"
+                        Width="120"
+                        Content="Аксессуары"
+                        Margin="5 9"
+                        Click="btnAccessories_Click"
+                        Background="#E0E0E0"
+                        FontFamily="arial"/>
+
+            </StackPanel>
+        </Grid>
+
+        <ListView x:Name="ListProduct"
+                  Grid.Row="1"
+                  Grid.Column="1" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  KeyDown="ListProduct_KeyDown"
+                  FontFamily="Arial"
+                  Background="#E0E0E0">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="80">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="400"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+
+
+                            <TextBlock Grid.Row="0" 
+                                       Text= "{Binding ProductName}" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Row="1"
+                                       Text="{Binding ProductDescription}" TextWrapping="Wrap"/>
+                        </Grid>
+
+                        <Border Grid.Column="0"
+                                Width="70"
+                                Margin="3" 
+                                BorderBrush="#E0E0E0"
+                                BorderThickness="1"
+                                CornerRadius="4">
+                            <Image Source="{Binding ProductImage}"/>
+                        </Border>
+
+
+                        <Border Grid.Column="3" 
+                                Grid.ColumnSpan="2" 
+                                Background="#95b5a1"
+                                Margin="5"
+                                CornerRadius="5"/>
+
+                        <TextBlock Grid.Column="2" 
+                   Text="{Binding ProductPrice}" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Right"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+                        
+                        <TextBlock Grid.Column="3" 
+                   Text="{Binding countProduct}" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Right"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+
+                        <TextBlock Grid.Column="4" 
+                   Text="{Binding Measure.NameMeasure}" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                                   Margin="10 0"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+                        
+                    </Grid>
+                    
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnAddProduct" 
+                    Background="#E0E0E0"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Content="Добавить"
+                    Margin="20 15"
+                    FontSize="18"
+                    FontFamily="arial"
+                    Click="btnAddProduct_Click"/>
+
+            <Button x:Name="btnEditProduct" 
+                    Background="#E0E0E0"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Content="Изменить"
+                    Margin="20 15"
+                    FontSize="18"
+                    FontFamily="arial"
+                    Click="btnEditProduct_Click"
+                    />
+
+            <Button x:Name="btnDeleteProduct" 
+                    Background="#E0E0E0"
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    Content="Удалить"
+                    Margin="20 15"
+                    FontSize="18"
+                    FontFamily="arial"
+                    Click="btnDeleteProduct_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>

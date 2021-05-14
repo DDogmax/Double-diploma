@@ -1,0 +1,109 @@
+﻿<Window x:Class="Magaz.Windows.EmployeeWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Magaz.Windows"
+        mc:Ignorable="d"
+        Title="Пользователи" Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#95b5a1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="15*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+       
+        <TextBlock Grid.Row="0" 
+                   Grid.Column="0" 
+                   Text="SmartCrow" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center"
+                   FontSize="25" 
+                   FontFamily="Arial"/>
+
+
+        <WrapPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Text="Поиск сотрудника" FontSize="20"/>
+            <TextBox x:Name="txtSearch" 
+                     Width="150" 
+                     Margin="20 0 0 0" 
+                     FontSize="15"
+                     VerticalContentAlignment="Center"
+                     FontFamily="Arial"
+                     />
+
+            <TextBlock Margin="100 0 0 0"
+                       VerticalAlignment="Center"
+                       FontSize="15"
+                       FontFamily="Arial">
+                <Run Text="Пользователь:"/>
+                <Run x:Name="txtNameEmpl"/>
+            </TextBlock>
+        </WrapPanel>
+
+        <DataGrid x:Name="ListEmployee" 
+                  Grid.Row="1" 
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  Margin="40 0"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  AlternatingRowBackground="#E0E0E0"
+                  FontFamily="Arial">
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="*"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}" Width="*"/>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Role.NameRole}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+           
+            <Button x:Name="btnAdd" 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Content="Добавить"
+                    Margin="20 15"
+                    FontSize="18"
+                    Click="btnAdd_Click"
+                    Background="#E0E0E0"
+                    FontFamily="Arial"/>
+
+            <Button x:Name="btnEdit" 
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Content="Изменить"
+                    Margin="20 15"
+                    FontSize="18" 
+                    Click="btnEdit_Click"
+                    Background="#E0E0E0"
+                    FontFamily="Arial"/>
+
+            <Button x:Name="btnDelete" 
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    Content="Удалить"
+                    Margin="20 15 40 15"
+                    FontSize="18"
+                    Click="btnDelete_Click"
+                    Background="#E0E0E0"
+                    FontFamily="Arial"/>
+
+        </Grid>
+    </Grid>
+</Window>

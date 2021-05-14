@@ -1,0 +1,130 @@
+﻿<Window x:Class="Magaz.Windows.AddEditVendorWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Magaz.Windows"
+        mc:Ignorable="d"
+      Title="Дополнение Постащика" Height="600" Width="400" 
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+    <Grid Background="#95b5a1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="txtxHeader"
+                   Text="Добавление Поставщика"
+                   Grid.ColumnSpan="2"
+                   FontSize="17"
+                   HorizontalAlignment="Center"
+                   Margin="0 15 0 0"
+                   FontWeight="Bold"
+                   FontFamily="Arial"/>
+
+        <TextBlock Text="Название компании"
+                   TextWrapping="Wrap"
+                   Grid.Row="1"
+                   FontFamily="arial"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        <TextBlock Text="Юридический адрес"
+                   TextWrapping="Wrap"
+                   Grid.Row="2"
+                   FontFamily="arial"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        <TextBlock Text="Телефон"
+                   Grid.Row="3"
+                   FontFamily="arial"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        <TextBlock Text="ИНН"
+                   Grid.Row="4"
+                   FontFamily="arial"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        <TextBlock Text="КПП"
+                   Grid.Row="5"
+                   FontFamily="arial"
+                   Style="{StaticResource textBlockStyle1}" />
+
+        
+        <TextBox x:Name="txtNameVendor" 
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Margin="7 15 25 15"
+                 FontSize="15"
+                 VerticalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <TextBox x:Name="txtAddressVendor" Grid.Row="2"
+                 Grid.Column="1"
+                 Margin="7 15 25 15"
+                 FontSize="15"
+                 VerticalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <TextBox x:Name="txtPhoneVendor" Grid.Row="3"
+                 Grid.Column="1"
+                 Margin="7 15 25 15"
+                 FontSize="15"
+                 VerticalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <TextBox x:Name="txtINNVendor" Grid.Row="4"
+                 Grid.Column="1"
+                 Margin="7 15 25 15"
+                 FontSize="15"
+                 VerticalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+
+        <TextBox x:Name="txtKPPVendor" Grid.Row="5"
+                 Grid.Column="1"
+                 Margin="7 15 25 15"
+                 FontSize="15"
+                 VerticalContentAlignment="Center"
+                 Background="#E0E0E0"
+                 FontFamily="arial"/>
+        
+
+        <Button x:Name="btnSave" Grid.Row="7"
+                Grid.Column="0"
+                Content="Cохранить"
+                FontSize="16"
+                Grid.ColumnSpan="2"
+                Width="200"
+                Margin="0 15"
+                Click="btnSave_Click"
+                Background="#E0E0E0"
+                FontFamily="arial"/>
+
+        <Button x:Name="btnClose" Grid.Row="8"
+                 Grid.Column="0"
+                Content="Отмена"
+                FontSize="16"
+                Grid.ColumnSpan="2"
+                Width="200"
+                Margin="0 15"
+                Click="btnClose_Click"
+                Background="#E0E0E0"
+                FontFamily="arial"/>
+    </Grid>
+</Window>

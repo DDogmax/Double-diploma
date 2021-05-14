@@ -1,0 +1,142 @@
+﻿<Window x:Class="Magaz.StartWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Magaz"
+        mc:Ignorable="d"
+        Title="Magazin" 
+        Height="500" 
+        Width="415" 
+        WindowStartupLocation="CenterScreen"
+        Background="#95b5a1"       
+               
+        ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="133"/>
+            <ColumnDefinition Width="267"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#E0E0E0"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="8"
+                Margin="15"
+                CornerRadius="15"/>
+
+        <TextBlock Text="Авторизация" 
+                   Grid.Row="0" 
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="20"
+                   FontFamily="Tempus Sans ITC"
+                   Margin="0 12 0 0"/>
+
+        <TextBlock Text="Логин" 
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Right"
+                   Margin="10"
+                   FontSize="17"/>
+
+        <TextBox x:Name="txtLogin" 
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 Width="200"
+                 Height="30"
+                 FontSize="16"
+                 VerticalContentAlignment="Center"
+                 FontFamily="Tempus Sans ITC" 
+                 KeyDown="txtLogin_KeyDown"
+                 />
+
+
+        <TextBlock Text="Пароль" 
+                   Grid.Row="2" 
+                   Grid.Column="0" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Right"
+                   Margin="10"
+                   FontSize="17"/>
+
+        <PasswordBox x:Name="txtPassword" 
+                 Grid.Row="2" 
+                 Grid.Column="1" 
+                 Width="200"
+                 Height="30"
+                 FontSize="16"
+                 VerticalContentAlignment="Center"
+                 FontFamily="Tempus Sans ITC"/>
+
+        <Button x:Name="btnLogin"
+                Grid.Column="0"
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Width="180"
+                Height="30"
+                Content="Войти"
+                FontSize="15" 
+                Click="btnLogin_Click"/>
+
+        <Button x:Name="btnClose"
+                Grid.Column="0"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                Width="180"
+                Height="30"
+                Content="Отмена"
+                FontSize="15"                
+                Click="btnClose_Click">
+            <Button.ToolTip>
+                <Grid>
+                    <StackPanel>
+                        <Image Height="50" Source="/Magaz;component/Image/exit.jpg"/>
+                        <TextBlock Text="Выход из приложения"/>
+                    </StackPanel>
+                </Grid>
+            </Button.ToolTip>
+        </Button>
+
+
+        <Button x:Name="btnRegistration"
+                Grid.Column="0"
+                Grid.Row="6"
+                Grid.ColumnSpan="2"
+                Width="180"
+                Height="30"
+                Content="Регистрация"
+                FontSize="15"
+                Visibility="Hidden"
+               />
+
+        <TextBlock x:Name="txtCapsLk" 
+                   Grid.Row="6"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Margin="20"/>
+
+    </Grid>
+</Window>
+
+
+
+
+
+
+
